@@ -1,0 +1,130 @@
+scroll-hidden()
+  &::-webkit-scrollbar
+    display:none
+
+row()
+  display:flex
+  flex-direction:row
+  justify-content:center
+  align-items:center
+column()
+  display:flex
+  flex-direction:column
+  justify-content:center
+  align-items:center
+  
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+
+border-none()
+  &:after
+    display: none
+
+bg-image($url)
+  background-image: url($url + '@2x.png')
+  // @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  //   background-image: url($url + '@3x.png')
+border-right-1px($color)
+  position: relative
+  &:before
+    display: block
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    border-right: 1px solid $color
+    content: ' '
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      -webkit-transform: scaleX(0.7)
+      transform: scaleX(0.7)
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scaleX(0.5)
+      transform: scaleX(0.5)
+
+  
+border-left-dashed-1px($color)
+  position: relative
+  &:before
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    border-left: 1px dashed $color
+    content: ' '
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      webkit-transform: scaleX(0.7)
+      transform: scaleX(0.7)
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scaleX(0.5)
+      transform: scaleX(0.5)
+border-left-1px($color)
+  position: relative
+  &:before
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    border-left: 1px solid $color
+    content: ' '
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      webkit-transform: scaleX(0.7)
+      transform: scaleX(0.7)
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scaleX(0.5)
+      transform: scaleX(0.5)
+border-top-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      -webkit-transform: scaleY(0.7)
+      transform: scaleY(0.7)
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scaleY(0.5)
+      transform: scaleY(0.5)
+border-all($color,$num = 0px)
+  position: relative
+  border:none
+
+  &:after
+    border-radius:$num
+    content: ''
+    position: absolute
+    z-index:-1
+    top: 0
+    left: 0
+    border: 1px solid $color
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+    width: 200%
+    height: 200%
+    -webkit-transform-origin: left top
+    transform-origin: left top
+    @media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+      -webkit-transform: scale(0.7)
+      transform: scale(0.7)    
+    @media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+      -webkit-transform: scale(0.5)
+      transform: scale(0.5)

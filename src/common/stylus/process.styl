@@ -1,0 +1,160 @@
+.super .project_content .el-tabs__nav .el-tabs__item{
+    color: #fff;
+    height: 38px;
+    border: 1px solid #2a7be2;
+    border-radius: 4px;
+    line-height: 38px;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.super .project_content .el-tabs__nav-wrap:after{
+    display: none;
+}
+
+.super .project_content .el-tabs{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.super .project_content .el-tabs__nav-wrap .el-tabs__active-bar{
+    display: none;
+}
+
+.super .project_content .el-tabs__header{
+    height: 62px;
+    /*margin: 0 0 4.95% 0;*/
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap{
+    height: 100%;
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap .el-tabs__nav-scroll{
+    height: 100%;
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap .el-tabs__nav-scroll .el-tabs__nav{
+    margin-top: 24px;
+    left: 50%;
+    transform: translateX(-50%)!important;
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap .el-tabs__nav-scroll .el-tabs__nav div:not(:last-child){
+    margin-right: 8px;
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap .el-tabs__nav-scroll .el-tabs__nav div:hover{
+    background-color: #2a7be2;
+}
+
+.super .project_content .el-tabs__header .el-tabs__nav-wrap .el-tabs__nav-scroll .el-tabs__nav .is-active{
+    background-color: #2a7be2;
+}
+
+.super .project_content .el-tabs__content{
+    padding: 0 30px 30px 30px;
+    flex: 1;
+}
+
+.super .project_content .el-tabs__content .el-tab-pane{
+    height: 100%;
+}
+
+.super .project_content .el-tabs__content .relation{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.super .project_content .el-tabs__content .relation .relation_name span:not(:last-child){
+    margin-right: 30px;
+}
+
+.super .project_content .el-tabs__content .relation .relation_content{
+    flex: 1;
+    padding: 20px 0;
+}
+
+.super .project_content .el-tabs__content .relation .relation_footer{
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #0d47a1;
+    border-radius: 14px;
+    position: relative;
+    text-align: center;
+    line-height: 42px;
+}
+
+.super .project_content .el-tabs__content .relation .relation_footer .point{
+    position: absolute;
+    left: 21px;
+    top: -21px;
+}
+
+.super .project_content .el-tabs__content .relation .swiper-container{
+    height: 380px;
+    padding-right: 60px;
+}
+
+.super .project_content .el-tabs__content .relation .swiper-container .swiper-wrapper{
+    height: 100%;
+}
+
+.super .project_content .el-tabs__content .relation .swiper-container .swiper-wrapper .swiper-slide{
+   /* height: 100% !important;*/
+}
+
+.super .project_content .el-tabs__content .relation .swiper-container .swiper-button-next{
+    transform: rotate(90deg);
+}
+
+.super .project_content .el-tabs__content .relation .swiper-container .swiper-button-prev{
+    transform: rotate(90deg);
+    right: 10px;
+    left: inherit;
+    margin-top: -100px;
+}
+.project_content .el-tab-pane .log_msg{
+    position: absolute;
+    width: 300px;
+    height: 54px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+}
+
+.project_content .el-tab-pane .log_msg .progress{
+    height: 18px;
+    background: #f9b511;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.project_content .el-tab-pane .log_msg span{
+    color: #f9b511;
+}
+
+.project_content .el-tab-pane .log_msg .progress_bg{
+    position: absolute;
+    width: 300px;
+    height: 18px;
+    bottom: 0;
+    background: #eee;
+    border-radius: 4px;
+}
+
+/*
+ * 内容样式
+ */
+.el-tabs__content>div img{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}

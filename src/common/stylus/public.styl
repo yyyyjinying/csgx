@@ -1,0 +1,328 @@
+@import "./variable"
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    font-family: "Microsoft Yahei";
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    font-size:14px;
+    background:url(../image/bg.png);
+}
+
+#app{
+    width: 100%;
+    height: 100%;
+    
+}
+#business,#risk,#process,#message
+  padding:16px 20px;
+  box-sizing:border-box;
+  height:calc(100% - 70px)
+
+button,input,textarea{
+	border:0;outline:none;
+}
+
+.scrollbar::-webkit-scrollbar {
+  display:none
+}
+
+.square
+  position:relative
+  width:100%
+  padding-bottom:100%
+  .square-item
+    position:absolute
+    left:0
+    top:0
+    width:100%
+    height:100%
+    
+.app{overflow:hidden;}
+
+.container{
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:50px;
+	overflow:auto;
+	box-sizing:border-box;
+}
+
+// 页面布局定位
+.box{
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	background:#F0F0F0;
+}
+
+.fixed-nav-content{
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:49px;
+  right:0;
+  background:$background-F0
+}
+
+.box_container{
+	position:absolute;
+	left:0;
+	right:0;
+	top:43px;
+	bottom:49px;
+	overflow:auto;
+}
+
+.scroll-container{
+  position:absolute
+  left:0
+  top:43px
+  bottom:0
+  right:0
+  overflow:hidden
+}
+    
+.scroll{
+  position:relative
+  width:100%
+  height:100%
+}
+        
+
+/*搜索分类样式*/  
+.relative{  
+  flex: auto; 
+  position: relative;  
+}  
+.absolute{  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  top: 0;
+}
+.fixed{
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	top:0;
+	z-index:1;
+	background:$page-background;
+}  
+.f_through{
+  text-decoration:line-through;
+}
+.f_justify{
+  text-align:justify;
+}
+.f_wrap {
+  flex-flow: wrap;
+}
+
+.border-bottom-1px {
+  position: relative;
+}
+
+.border-bottom-bpx {
+  position: relative;
+}
+
+.border-top-bpx {
+  position: relative;
+}
+
+.between_spadding_20 {
+  padding: 0 20rpx;
+}
+
+.between_spadding_18 {
+  padding: 0 18rpx;
+}
+
+.between_spadding_12 {
+  padding: 0 12rpx;
+}
+
+.f_row_e{
+  display:flex;
+  flex-direction:row;
+  align-items:flex-end
+}
+
+.f_row_align {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.f_row_space_around {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.f_row_space_between {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items-: center;
+}
+
+.flex {
+  flex: 1;
+}
+
+.h_font {
+  word-break: break-all;
+}
+
+.p100 {
+  width: 100%;
+  height: 100%;
+}
+
+.f_t_hidden {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.f_p_hidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.border-bottom-1px:after {
+  z-index: 0;
+  content: "";
+  width: 100%;
+  height: 0;
+  border-bottom: 1rpx solid #c0c0c0;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+  bottom: 0rpx;
+}
+
+.border-top-bpx:after {
+  z-index: 0;
+  content: "";
+  width: 100%;
+  height: 0;
+  border-top: 1rpx solid #E5E5E5;
+  position: absolute;
+  left: 0;
+  top: 0rpx;
+}
+.border-right-bpx,.border-left-bpx{
+  position:relative;
+}
+.border-right-bpx:after {
+  z-index: 0;
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  border-right:1rpx solid #E5E5E5;
+  right: 0;
+  top: 0;
+}
+.border-left-bpx:after {
+  z-index: 0;
+  content: "";
+  width: 0;
+  height: 100%;
+  border-left:1rpx solid #E5E5E5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.border-bottom-bpx:before {
+  z-index: 0;
+  content: "";
+  width: 100%;
+  height: 0;
+  border-bottom: 1rpx solid #E5E5E5;
+  position: absolute;
+  left: 0;
+  bottom: 0rpx;
+}
+
+.common_bottom_fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+}
+
+.f_row_c_c {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.f_column_c_c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.f_row_c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.f_column_c {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.f_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.f_column {
+  display: flex;
+  flex-direction: column;
+}
+.f_column_s{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.f_column_d{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.f_column_align{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
