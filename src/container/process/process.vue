@@ -53,6 +53,7 @@
 							</div>
 						</div>
 					</div>
+					<p class="overseer-tip">高：存在<span>3</span>个以上问题的项目；中：存在<span>2</span>个问题的项目；低：存在<span>1</span>个问题的项目；正常：目前<span>未</span>发现问题的项目。</p>
 				</div>
 				<!-- 点击进程后的切换页面
 				<router-view></router-view> -->
@@ -102,11 +103,55 @@
 			<!-- 预警图表 -->
 			<div v-else class="main f_column_c flex border_radius">
 				<div class="title_back f_row_align">
-					<h1 class="line-title">项目流程图</h1><button class="back" type="button" @click="showWarnHandle">返回</button>
+					<h1 class="line-title">项目流程图</h1>
+					<button class="back" type="button" @click="showWarnHandle">返回</button>
 				</div>
 			
 				<div class="process-preson">
-					<img class="tubiao" src="./img/tubiao.png"/>
+					<div class="process-ico">
+						<div class="item-ico">
+							<span class="img-ico" v-if="icoActiveShow == 0"></span>
+							<span class="f_p_hidden ico-active" @click="positionHandle(0)">计划申报前阶段</span>
+							<div class="item-line-ico">
+								<div class="item-ico">
+									<span class="img-ico" v-if="icoActiveShow == 1"></span>
+									<span class="f_p_hidden" @click="positionHandle(1)">计划申报前阶段</span>
+									<div class="item-line-ico">
+										<div class="item-ico">
+											<span class="img-ico" v-if="icoActiveShow == 2"></span>
+											<span class="f_p_hidden" @click="positionHandle(2)">计划申报前阶段</span>
+											<div class="item-line-ico">
+												<div class="item-ico">
+													<span class="img-ico" v-if="icoActiveShow == 3"></span>
+													<span class="f_p_hidden" @click="positionHandle(3)">计划申报前阶段</span>
+													<div class="item-line-ico item-line-ico-rotate">
+														<div class="item-ico">
+															<span class="img-ico" v-if="icoActiveShow == 4"></span>
+															<span class="f_p_hidden" @click="positionHandle(4)">计划申报前阶段</span>
+															<div class="item-line-ico item-line-ico-rotate">
+																<div class="item-ico">
+																	<span class="img-ico" v-if="icoActiveShow == 5"></span>
+																	<span class="f_p_hidden" @click="positionHandle(5)">计划申报前阶段</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- <div class="item-ico">
+							<span class="f_p_hidden">计划申报前阶段</span>
+							<div class="item-line-ico"></div>
+						</div> -->
+						
+					</div>
+
+					<!-- <img class="tubiao" src="./img/tubiao.png"/> -->
 					<img class="ren" :style="position" src="./img/ren.png"/>
 				</div>
 
@@ -133,6 +178,7 @@ export default {
 		return {
 			isShowWarn:true,//是否显示警示
 			isWarnSheet:false,//不显示
+			icoActiveShow:3,//等是否点亮
 			ProjectList:[],//流程数据
 			process_name:'',//主进程名称
 			titleText:'',
@@ -171,12 +217,39 @@ export default {
 				list02:['正山甲（二期）','汤坑第一   工业区','新和','飞西','谷仓吓'],
 				list03:['世界塑胶厂','洋母帐','牛角龙','六和商业广场','均田','龙田路口','飞东','三洋湖'],
 				list04:['江边','东门','横岭塘','新兴街','宝山南','澳子头','坪山围','宝山北','汤坑老村']
-			}
+			},
+			positionData:[{
+				left:"-50px",
+				top:"40px"
+			},{
+				left:"60px",
+				top:"130px"
+			},{
+				left:"200px",
+				top:"248px"
+			},{
+				left:"320px",
+				top:"365px"
+			},{
+				left:"750px",
+				top:"190px",
+				transform:'scale(-1,1)'
+			},{
+				left:"920px",
+				top:"10px",
+				transform:'scale(-1,1)'
+			}]
+
 		}
 	},
 	computed:{
 	},
 	methods:{
+		//点击定位
+		positionHandle(index) {
+			this.position = this.positionData[index]
+			// this.icoActiveShow = index
+		},
 		//显示预警图表
 		showWarnHandle() {
 			this.isWarnSheet = !this.isWarnSheet
@@ -541,6 +614,18 @@ table
 	font-size:18px;
 	font-weight:bold;
 	color:#ffc600;
+.overseer-tip
+	height:40px;
+	span
+		font-size:18px;
+		&:nth-of-type(1)
+			color:#bc3f27;
+		&:nth-of-type(2)
+			color:#ff8a00;
+		&:nth-of-type(3)
+			color:#2a7be2;
+		&:nth-of-type(4)
+			color:#4cb32c;
 .overseer-box
 	margin-bottom:30px;
 	.overseer-item
@@ -583,18 +668,16 @@ table
 				color:#fff;
 
 .process-preson
-	width:865px;
-	height:379px;
+	width:100%;
+	margin-left:100px;
 	position:relative;
 	margin-top:100px;
-	.tubiao
-		width:100%;
-		height:100%;
+	overflow-:auto;
 	.ren
 		transition:1s;
 		position:absolute;
-		// left:-50px;
-		// top:40px;
+		left:340px;
+		top:350px;
 .sheet-title{
 	font-size:18px;
 	height:103px;
@@ -616,4 +699,75 @@ table
 		border-radius:4px;
 		margin-left:auto;
 		margin-right:30px;
+		
+.process-ico
+	.item-ico
+		width:145px;
+		height:43px;
+		background:#22bbc2;
+		border-radius:4px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding:0 4px;
+		box-siziing:border-box;
+		text-align:center;
+		position:relative;
+		.img-ico
+			position:absolute;
+			right:6px;
+			top:-8px;
+			display:block;
+			width:20px;
+			height:28px;
+			background:url(./img/deng.png) no-repeat;
+		.item-line-ico
+			border-bottom:1px solid #fff;
+			position:absolute;
+			right:-88px;
+			top:43px;
+			&::after
+				position:absolute;
+				right:-15px;
+				top:-3px;
+				content:'';
+				display:block;
+				border: 4px solid transparent;
+				border-left: 15px solid #fff;
+				width: 0;
+				height: 0px;
+			&:nth-of-type(1)
+				width:90px;
+				transform-origin:left top 0;
+				transform:rotate(48deg);
+			.item-ico
+				position:absolute;
+				transform:rotate(-48deg) translateX(52px);
+				top:40px;
+				right:-60px;
+		.item-line-ico-rotate
+			top:0;
+			transform:rotate(-45deg);
+			&:nth-of-type(1)
+				right:-167px;
+				width:167px;
+				transform-origin:left top 0;
+				transform:rotate(-48deg);
+			.item-ico
+				position:absolute;
+				transform:rotate(48deg) translateX(62px);
+				top:-86px;
+				right:-60px;
+				
+		span
+			font-size:16px;
+			color:#fff;
+			line-height:1.2;
+			position:relative;
+		
+			
+				
+					
+				
+				
 </style>
