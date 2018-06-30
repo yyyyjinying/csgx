@@ -658,6 +658,7 @@ table
 			font-weight:bold;
 		.overseer-item-con
 			padding:18px 0;
+			overflow:auto;
 			p
 				width:100%;
 				cursor:pointer;

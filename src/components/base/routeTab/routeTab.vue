@@ -4,6 +4,13 @@
 			<img src="./img/title.png"/>
 		</div>
 		<div class="nav f_row">
+			<div class="f_column_c_c">
+				<a class="platform flex f_column_c_c" href="http://172.16.64.43:8087/ps_bigdata/login/index">
+					<span class="iconfont icon-icon4"></span>
+					<span class="title_nav">平台首页</span>
+				</a>
+				<span class="line"></span>
+			</div>
 			<router-link tag="div" :to="{name:item.url}" class="f_column_c_c" v-for="(item,index) in navList" :key="index">
 				<span :class="'iconfont '+item.icon"></span>
 				<span class="title_nav">{{item.name}}</span>
@@ -13,7 +20,7 @@
 	</div>
 </template>
 
-
+i
 <script>
 //引入组件
 export default {
@@ -100,5 +107,11 @@ export default {
 	.router-link-exact-active
 		background:#0e4a74;
 		border-top:3px solid #2a7be2;
+.platform:hover
+	width:106px;
+	height:70px;
+	box-sizing:border-box;
+	background:#0e4a74;
+	border-top:3px solid #2a7be2;
 			
 </style>

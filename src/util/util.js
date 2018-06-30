@@ -2,7 +2,7 @@
 
 import api from "../api";
 
-
+new Date(cxx)
 const formatTime = (date) => {
   let year = date.getFullYear()
   let month = date.getMonth() + 1
